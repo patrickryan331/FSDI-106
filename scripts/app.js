@@ -12,4 +12,7 @@ function init(){
     sayGoodbye();
 }
 
+//comment
+
+
 window.onload = init;
