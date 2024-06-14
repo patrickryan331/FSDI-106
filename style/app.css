@@ -1,7 +1,7 @@
 main {
     display: flex;
     height: 100vh;
-    background-color: #3b5f2e;
+    background-color: #081f00;
     color: #e8e8e8;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background-color 0.3s ease;
@@ -12,7 +12,10 @@ main:hover {
 }
 
 #list {
-    background-color: #769c6a;
+    background-color: #037072;
+    /* background-image: url(../images/neon1.jpg); */
+    background-position: center;
+    background-size: 99%;
     flex: 3;
     padding: 1rem;
     border-radius: 8px;
@@ -26,7 +29,7 @@ main:hover {
 }
 
 #form {
-    background-color: #496540;
+    background-color: #009e8c;
     flex: 2;
     padding: 1rem;
     border-radius: 8px;
