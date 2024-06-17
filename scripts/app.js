@@ -30,7 +30,6 @@ function saveTask()
     let taskToSave = new Task(title,description,color,date,status,budget);
     console.log(taskToSave);
 
-
     // save to the server
 $.ajax({
     type: "POST",
@@ -47,7 +46,6 @@ $.ajax({
         console.log(error);
     },
 })
-    // display the info from the server
 }
 
 
@@ -77,46 +75,44 @@ function loadTask(){
 }
 
 
-
-
-
-
 function displayTask(task)
 {
     let syntax = `
     <div class='task'>
-        <div class='info'>
-            <h3>${task.title}</h3>
-            <h5>${task.description}</h5>
+        <div class='list-title'>
+            <h2>${task.title}</h3>
         </div>
-            <label class="status">${task.status}</label>
-            <div class="date-budget">
-                <label>${task.date}</label>
-            </div>
-            <div class="date-budget">
-                <label>$${task.budget}</label>
-            </div>
+        <div class='list-description'>
+            <h4>${task.description}</h5>
+        </div>
+        <div class='list-status'>
+            <b>Status:</b> ${task.status}
+        </div>
+        <div class='list-date'>
+            ${task.date}
+        </div>
+        <div class='list-budget'>
+            <b>Budget:</b> $${task.budget}
+        </div>
     </div>
         `
     $(".list-task").append(syntax);
 }
 
-
-
-
-function testRequest(){
+function deleteAllTasks() {
     $.ajax({
-        type: "GET",
-        url:  "http://fsdiapi.azurewebsites.net",
-        success: function(response){
-            console.log(response);
+        type: "DELETE",
+        url: "http://fsdiapi.azurewebsites.net//api/tasks/clear/patrick",
+        success: function(response) {
+            console.log("All tasks deleted successfully");
+            $(".list-task").empty();
         },
-        error: function(error){
-            console.log(error);
-        },
+        error: function(error) {
+            console.log("Error deleting tasks:", error);
+            $(".list-task").empty();
+        }
     });
 }
-
 
 
 function init()
@@ -126,6 +122,7 @@ function init()
     loadTask();
     //hook events
     $("#btnSave").click(saveTask);
+    $("#btnDeleteAll").click(deleteAllTasks); 
 }
 
 

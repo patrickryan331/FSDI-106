@@ -1,23 +1,21 @@
 main {
     display: flex;
-    height: 100vh;
-    background-color: #081f00;
+    height: 155vh;
+    background-color: #009e8c;
     color: #e8e8e8;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background-color 0.3s ease;
 }
 
 main:hover {
-    background-color: #2f4c25;
+    background-color: #0078ab;
 }
 
 #list {
     background-color: #037072;
-    /* background-image: url(../images/neon1.jpg); */
     background-position: center;
     background-size: 99%;
-    flex: 3;
-    padding: 1rem;
+    flex: 2;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -35,9 +33,22 @@ main:hover {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 #form:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.task{
+    background-color:#037072;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    border-radius: 3px;
+    border-color: black;
+    color: white;
+    margin-bottom: 0px;
 }
